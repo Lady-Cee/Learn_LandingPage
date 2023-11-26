@@ -4,21 +4,20 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 
-class MainActivity : AppCompatActivity() {
+class CreateActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_create)
 
-        //access the button on our UI
-        val joinButton: Button = findViewById(R.id.joinNowButton)
-
-        //set a listener to the button
-        joinButton.setOnClickListener {
+        val haveAccount: TextView = findViewById(R.id.alreadyHaveAcct)
+        haveAccount.setOnClickListener {
+            funHaveAccount()
+        }
+        }
+        private fun funHaveAccount(){
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
-
-
         }
     }
-}
